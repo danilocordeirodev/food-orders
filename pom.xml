@@ -20,6 +20,7 @@
         <module>order-service</module>
         <module>common</module>
         <module>infrastructure</module>
+        <module>customer-service</module>
     </modules>
 
     <properties>
@@ -86,6 +87,11 @@
             <dependency>
                 <groupId>com.oriedroc.systems</groupId>
                 <artifactId>common-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oriedroc.systems</groupId>
+                <artifactId>common-data-access</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

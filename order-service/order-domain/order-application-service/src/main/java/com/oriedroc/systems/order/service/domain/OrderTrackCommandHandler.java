@@ -1,7 +1,5 @@
 package com.oriedroc.systems.order.service.domain;
 
-import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderCommand;
-import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderResponse;
 import com.oriedroc.systems.order.service.domain.dto.track.TrackOrderQuery;
 import com.oriedroc.systems.order.service.domain.dto.track.TrackOrderResponse;
 import com.oriedroc.systems.order.service.domain.entity.Order;

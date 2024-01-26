@@ -61,7 +61,7 @@ public class OrderApplicationServiceTest {
     public void init() {
         createOrderCommand = CreateOrderCommand.builder()
                 .customerId(CUSTOMER_ID)
-                .restautantId(RESTAURANT_ID)
+                .restaurantId(RESTAURANT_ID)
                 .address(OrderAddress.builder()
                         .street("rua_1")
                         .zipCode("25558580")
@@ -85,7 +85,7 @@ public class OrderApplicationServiceTest {
 
         createOrderCommandWrongPrice = CreateOrderCommand.builder()
                 .customerId(CUSTOMER_ID)
-                .restautantId(RESTAURANT_ID)
+                .restaurantId(RESTAURANT_ID)
                 .address(OrderAddress.builder()
                         .street("rua_1")
                         .zipCode("25558580")
@@ -109,7 +109,7 @@ public class OrderApplicationServiceTest {
 
         createOrderCommandWrongProductPrice = CreateOrderCommand.builder()
                 .customerId(CUSTOMER_ID)
-                .restautantId(RESTAURANT_ID)
+                .restaurantId(RESTAURANT_ID)
                 .address(OrderAddress.builder()
                         .street("rua_1")
                         .zipCode("25558580")
@@ -135,7 +135,7 @@ public class OrderApplicationServiceTest {
         customer.setId(new CustomerId(CUSTOMER_ID));
 
         Restaurant restaurantResponse = Restaurant.builder()
-                .restaurantId(new RestaurantId(createOrderCommand.getRestautantId()))
+                .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(List.of(new Product(new ProductId(PRODUCT_ID), "product-1", new Money(new BigDecimal("50.00"))),
                         new Product(new ProductId(PRODUCT_ID), "product-2", new Money(new BigDecimal("50.00")))))
                 .active(true)
@@ -178,7 +178,7 @@ public class OrderApplicationServiceTest {
     @Test
     public void testCreateOrderWithPassiveRestaurant() {
         Restaurant restaurantResponse = Restaurant.builder()
-                .restaurantId(new RestaurantId(createOrderCommand.getRestautantId()))
+                .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(List.of(new Product(new ProductId(PRODUCT_ID), "product-1", new Money(new BigDecimal("50.00"))),
                         new Product(new ProductId(PRODUCT_ID), "product-2", new Money(new BigDecimal("50.00")))))
                 .active(false)

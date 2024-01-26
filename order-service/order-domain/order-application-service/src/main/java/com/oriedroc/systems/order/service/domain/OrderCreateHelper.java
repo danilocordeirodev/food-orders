@@ -1,7 +1,6 @@
 package com.oriedroc.systems.order.service.domain;
 
 import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderCommand;
-import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderResponse;
 import com.oriedroc.systems.order.service.domain.entity.Customer;
 import com.oriedroc.systems.order.service.domain.entity.Order;
 import com.oriedroc.systems.order.service.domain.entity.Restaurant;
@@ -58,9 +57,9 @@ public class OrderCreateHelper {
         Restaurant restaurant = orderDataMapper.createOrderCommandToRestaurant(createOrderCommand);
         Optional<Restaurant> optionalRestaurant = restaurantRepository.findRestaurantInformation(restaurant);
         if(optionalRestaurant.isEmpty()) {
-            log.warn("Could not find restaurant with restaurant id: {}", createOrderCommand.getRestautantId());
+            log.warn("Could not find restaurant with restaurant id: {}", createOrderCommand.getRestaurantId());
             throw new OrderDomainException("Could not find restaurant with restaurant id: " +
-                    createOrderCommand.getRestautantId());
+                    createOrderCommand.getRestaurantId());
         }
         return optionalRestaurant.get();
     }
