@@ -1,7 +1,5 @@
 package com.oriedroc.systems.application.handler;
 
-import com.oriedroc.systems.order.service.domain.exception.OrderDomainException;
-import com.oriedroc.systems.order.service.domain.exception.OrderNotFoundException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.ValidationException;

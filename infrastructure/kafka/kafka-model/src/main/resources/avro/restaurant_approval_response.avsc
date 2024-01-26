@@ -7,6 +7,7 @@
             "name": "id",
             "type": {
                 "type": "string",
+                "avro.java.string":"String",
                 "logicalType": "uuid"
             }
         },
@@ -14,6 +15,7 @@
             "name": "sagaId",
             "type": {
                 "type": "string",
+                "avro.java.string":"String",
                 "logicalType": "uuid"
             }
         },
@@ -21,6 +23,7 @@
             "name": "restaurantId",
             "type": {
                 "type": "string",
+                "avro.java.string":"String",
                 "logicalType": "uuid"
             }
         },
@@ -28,6 +31,7 @@
             "name": "orderId",
             "type": {
                 "type": "string",
+                "avro.java.string":"String",
                 "logicalType": "uuid"
             }
         },
