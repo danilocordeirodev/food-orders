@@ -1,6 +1,7 @@
 package com.oriedroc.systems.order.service.messaging.publisher.kafka;
 
 import com.oriedroc.systems.kafka.order.avro.model.PaymentRequestAvroModel;
+import com.oriedroc.systems.kafka.producer.KafkaMessageHelper;
 import com.oriedroc.systems.kafka.producer.service.KafkaProducer;
 import com.oriedroc.systems.order.service.domain.config.OrderServiceConfigData;
 import com.oriedroc.systems.order.service.domain.event.OrderCreatedEvent;
@@ -20,16 +21,16 @@ public class CreateOrderKafkaMessagePublisher implements OrderCreatedPaymentRequ
     private final OrderMessagingDataMapper orderMessagingDataMapper;
     private final OrderServiceConfigData orderServiceConfigData;
     private final KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;
-    private final OrderKafkaMessageHelper orderKafkaMessageHelper;
+    private final KafkaMessageHelper kafkaMessageHelper;
 
     public CreateOrderKafkaMessagePublisher(OrderMessagingDataMapper orderMessagingDataMapper, 
                                             OrderServiceConfigData orderServiceConfigData, 
                                             KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer,
-                                            OrderKafkaMessageHelper orderKafkaMessageHelper) {
+                                            KafkaMessageHelper kafkaMessageHelper) {
         this.orderMessagingDataMapper = orderMessagingDataMapper;
         this.orderServiceConfigData = orderServiceConfigData;
         this.kafkaProducer = kafkaProducer;
-        this.orderKafkaMessageHelper = orderKafkaMessageHelper;
+        this.kafkaMessageHelper = kafkaMessageHelper;
     }
 
     @Override
@@ -44,7 +45,7 @@ public class CreateOrderKafkaMessagePublisher implements OrderCreatedPaymentRequ
             kafkaProducer.send(orderServiceConfigData.getPaymentRequestTopicName(),
                     orderId,
                     paymentRequestAvroModel,
-                    orderKafkaMessageHelper.getKafkaCallback(
+                    kafkaMessageHelper.getKafkaCallback(
                             orderServiceConfigData.getPaymentResponseTopicName(),
                             paymentRequestAvroModel,
                             orderId,

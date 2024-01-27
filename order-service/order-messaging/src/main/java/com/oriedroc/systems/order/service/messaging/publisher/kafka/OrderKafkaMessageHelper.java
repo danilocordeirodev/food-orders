@@ -1,6 +1,5 @@
 package com.oriedroc.systems.order.service.messaging.publisher.kafka;
 
-import com.oriedroc.systems.kafka.order.avro.model.PaymentRequestAvroModel;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.kafka.support.SendResult;

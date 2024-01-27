@@ -3,7 +3,6 @@ package com.oriedroc.systems.order.service.messaging.listener.kafka;
 import com.oriedroc.systems.kafka.consumer.KafkaConsumer;
 import com.oriedroc.systems.kafka.order.avro.model.PaymentResponseAvroModel;
 import com.oriedroc.systems.kafka.order.avro.model.PaymentStatus;
-import com.oriedroc.systems.order.service.domain.dto.message.PaymentResponse;
 import com.oriedroc.systems.order.service.domain.ports.input.message.listener.payment.PaymentResponseMessageListener;
 import com.oriedroc.systems.order.service.messaging.mapper.OrderMessagingDataMapper;
 import lombok.extern.slf4j.Slf4j;
