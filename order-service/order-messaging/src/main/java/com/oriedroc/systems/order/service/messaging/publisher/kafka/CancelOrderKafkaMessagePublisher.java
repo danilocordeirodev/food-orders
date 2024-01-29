@@ -8,12 +8,8 @@ import com.oriedroc.systems.order.service.domain.event.OrderCancelledEvent;
 import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
 import com.oriedroc.systems.order.service.messaging.mapper.OrderMessagingDataMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.producer.RecordMetadata;
-import org.springframework.kafka.support.SendResult;
-import org.springframework.stereotype.Component;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.function.BiConsumer;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
