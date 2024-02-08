@@ -20,6 +20,10 @@ public class Payment extends AggregateRoot<PaymentId> {
     private PaymentStatus paymentStatus;
     private ZonedDateTime createdAt;
 
+    public void updateStatus(PaymentStatus paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
     public void initializePayment() {
         setId(new PaymentId(UUID.randomUUID()));
         createdAt = ZonedDateTime.now(ZoneId.of("UTC"));
