@@ -46,7 +46,7 @@ public class CreditEntry extends AggregateRoot<CreditEntryId> {
         private Builder() {
         }
 
-        public Builder id(CreditEntryId val) {
+        public Builder creditEntryId(CreditEntryId val) {
             creditEntryId = val;
             return this;
         }
