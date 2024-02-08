@@ -6,7 +6,6 @@ import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.
 import com.oriedroc.systems.order.service.domain.ports.output.repository.CustomerRepository;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.OrderRepository;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.RestaurantRepository;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
