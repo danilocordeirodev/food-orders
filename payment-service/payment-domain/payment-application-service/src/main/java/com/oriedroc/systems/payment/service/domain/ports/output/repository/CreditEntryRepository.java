@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface CreditEntryRepository {
     CreditEntry save(CreditEntry creditEntry);
 
-    Optional<CreditEntry> findByCustomeId(CustomerId customerId);
+    Optional<CreditEntry> findByCustomerId(CustomerId customerId);
 }
