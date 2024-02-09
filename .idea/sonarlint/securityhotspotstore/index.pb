@@ -142,3 +142,9 @@ minfrastructure/kafka/kafka-producer/src/main/java/com/oriedroc/systems/kafka/pr
 –payment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/publisher/kafka/PaymentFailedKafkaMessagePublisher.java,1/f/1fdade76e9242b47e2c6b59f7a7c79bf4900684f
 ¿
 Žpayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/listener/kafka/PaymentRequestKafkaListener.java,7/6/76c0f543468d0c7d41e99ed13ddf4ed796e4a3c5
+U
+%order-service/order-container/pom.xml,5/e/5edc4f773e0205d9c5812143cbbd1132b3c3de4c
+ª
+zpayment-service/payment-container/src/main/java/com/oriedroc/systems/payment/service/domain/PaymentServiceApplication.java,f/8/f8e99d3a5bcacfc402fcd27c7aef688a95b8aa12
+¢
+rpayment-service/payment-container/src/main/java/com/oriedroc/systems/payment/service/domain/BeanConfiguration.java,d/b/dbc0095bd45b504ce970cc31291165d019053103
