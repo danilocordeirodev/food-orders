@@ -1,8 +1,8 @@
 package com.oriedroc.systems.order.service.dataaccess.restaurant.adapter;
 
-import com.oriedroc.systems.order.service.dataaccess.restaurant.entity.RestaurantEntity;
+import com.oriedroc.systems.dataaccess.restaurant.entity.RestaurantEntity;
+import com.oriedroc.systems.dataaccess.restaurant.repository.RestaurantJpaRepository;
 import com.oriedroc.systems.order.service.dataaccess.restaurant.mapper.RestaurantDataAccessMapper;
-import com.oriedroc.systems.order.service.dataaccess.restaurant.repository.RestaurantJpaRepository;
 import com.oriedroc.systems.order.service.domain.entity.Restaurant;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.RestaurantRepository;
 import org.springframework.stereotype.Component;
