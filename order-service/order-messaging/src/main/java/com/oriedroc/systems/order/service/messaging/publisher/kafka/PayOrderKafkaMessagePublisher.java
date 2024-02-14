@@ -1,18 +1,18 @@
 package com.oriedroc.systems.order.service.messaging.publisher.kafka;
 
+import com.oriedroc.systems.domain.event.publisher.DomainEventPublisher;
 import com.oriedroc.systems.kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import com.oriedroc.systems.kafka.producer.KafkaMessageHelper;
 import com.oriedroc.systems.kafka.producer.service.KafkaProducer;
 import com.oriedroc.systems.order.service.domain.config.OrderServiceConfigData;
 import com.oriedroc.systems.order.service.domain.event.OrderPaidEvent;
-import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.restaurantapproval.OrderPaidRestaurantRequestMessagePublisher;
 import com.oriedroc.systems.order.service.messaging.mapper.OrderMessagingDataMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class PayOrderKafkaMessagePublisher implements OrderPaidRestaurantRequestMessagePublisher {
+public class PayOrderKafkaMessagePublisher implements DomainEventPublisher<OrderPaidEvent> {
 
     private final OrderMessagingDataMapper orderMessagingDataMapper;
     private final OrderServiceConfigData orderServiceConfigData;

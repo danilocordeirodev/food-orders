@@ -1,20 +1,13 @@
 package com.oriedroc.systems.order.service.domain;
 
 import com.oriedroc.systems.domain.event.EmptyEvent;
-import com.oriedroc.systems.domain.valueobject.OrderId;
 import com.oriedroc.systems.order.service.domain.dto.message.PaymentResponse;
 import com.oriedroc.systems.order.service.domain.entity.Order;
 import com.oriedroc.systems.order.service.domain.event.OrderPaidEvent;
-import com.oriedroc.systems.order.service.domain.exception.OrderNotFoundException;
-import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.restaurantapproval.OrderPaidRestaurantRequestMessagePublisher;
-import com.oriedroc.systems.order.service.domain.ports.output.repository.OrderRepository;
 import com.oriedroc.systems.saga.SagaStep;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
-import java.util.UUID;
 
 @Slf4j
 @Component

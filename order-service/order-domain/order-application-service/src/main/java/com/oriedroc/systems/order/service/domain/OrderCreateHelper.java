@@ -7,7 +7,6 @@ import com.oriedroc.systems.order.service.domain.entity.Restaurant;
 import com.oriedroc.systems.order.service.domain.event.OrderCreatedEvent;
 import com.oriedroc.systems.order.service.domain.exception.OrderDomainException;
 import com.oriedroc.systems.order.service.domain.mapper.OrderDataMapper;
-import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.CustomerRepository;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.OrderRepository;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.RestaurantRepository;

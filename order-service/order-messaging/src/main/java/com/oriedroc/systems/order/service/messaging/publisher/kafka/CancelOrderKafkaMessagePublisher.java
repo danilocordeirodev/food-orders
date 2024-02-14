@@ -1,11 +1,11 @@
 package com.oriedroc.systems.order.service.messaging.publisher.kafka;
 
+import com.oriedroc.systems.domain.event.publisher.DomainEventPublisher;
 import com.oriedroc.systems.kafka.order.avro.model.PaymentRequestAvroModel;
 import com.oriedroc.systems.kafka.producer.KafkaMessageHelper;
 import com.oriedroc.systems.kafka.producer.service.KafkaProducer;
 import com.oriedroc.systems.order.service.domain.config.OrderServiceConfigData;
 import com.oriedroc.systems.order.service.domain.event.OrderCancelledEvent;
-import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
 import com.oriedroc.systems.order.service.messaging.mapper.OrderMessagingDataMapper;
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CancelOrderKafkaMessagePublisher implements OrderCancelledPaymentRequestMessagePublisher {
+public class CancelOrderKafkaMessagePublisher implements DomainEventPublisher<OrderCancelledEvent> {
     private final OrderMessagingDataMapper orderMessagingDataMapper;
     private final OrderServiceConfigData orderServiceConfigData;
     private final KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;

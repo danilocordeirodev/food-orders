@@ -4,8 +4,6 @@ import com.oriedroc.systems.domain.event.EmptyEvent;
 import com.oriedroc.systems.order.service.domain.dto.message.RestaurantApprovalResponse;
 import com.oriedroc.systems.order.service.domain.entity.Order;
 import com.oriedroc.systems.order.service.domain.event.OrderCancelledEvent;
-import com.oriedroc.systems.order.service.domain.event.OrderPaidEvent;
-import com.oriedroc.systems.order.service.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
 import com.oriedroc.systems.saga.SagaStep;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
