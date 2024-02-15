@@ -16,13 +16,13 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public class PaymentoOutboxScheduler implements OutboxScheduler {
+public class PaymentOutboxScheduler implements OutboxScheduler {
 
     private final PaymentOutboxHelper paymentOutboxHelper;
     private final PaymentRequestMessagePublisher paymentRequestMessagePublisher;
 
-    public PaymentoOutboxScheduler(PaymentOutboxHelper paymentOutboxHelper,
-                                   PaymentRequestMessagePublisher paymentRequestMessagePublisher) {
+    public PaymentOutboxScheduler(PaymentOutboxHelper paymentOutboxHelper,
+                                  PaymentRequestMessagePublisher paymentRequestMessagePublisher) {
         this.paymentOutboxHelper = paymentOutboxHelper;
         this.paymentRequestMessagePublisher = paymentRequestMessagePublisher;
     }
