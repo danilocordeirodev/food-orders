@@ -1,9 +1,6 @@
 package com.oriedroc.systems.order.service.domain.mapper;
 
-import com.oriedroc.systems.domain.valueobject.CustomerId;
-import com.oriedroc.systems.domain.valueobject.Money;
-import com.oriedroc.systems.domain.valueobject.ProductId;
-import com.oriedroc.systems.domain.valueobject.RestaurantId;
+import com.oriedroc.systems.domain.valueobject.*;
 import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderCommand;
 import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderResponse;
 import com.oriedroc.systems.order.service.domain.dto.create.OrderAddress;
@@ -12,6 +9,8 @@ import com.oriedroc.systems.order.service.domain.entity.Order;
 import com.oriedroc.systems.order.service.domain.entity.OrderItem;
 import com.oriedroc.systems.order.service.domain.entity.Product;
 import com.oriedroc.systems.order.service.domain.entity.Restaurant;
+import com.oriedroc.systems.order.service.domain.event.OrderCreatedEvent;
+import com.oriedroc.systems.order.service.domain.outbox.model.payment.OrderPaymentEventPayload;
 import com.oriedroc.systems.order.service.domain.valueobject.StreetAddress;
 import org.springframework.stereotype.Component;
 
@@ -74,6 +73,16 @@ public class OrderDataMapper {
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
                 .failureMessages(order.getFailureMessages())
+                .build();
+    }
+
+    public OrderPaymentEventPayload orderCreatedEventToOrderPaymentEventPayload(OrderCreatedEvent orderCreatedEvent) {
+        return OrderPaymentEventPayload.builder()
+                .customerId(orderCreatedEvent.getOrder().getCustomerId().getValue().toString())
+                .orderId(orderCreatedEvent.getOrder().getId().getValue().toString())
+                .price(orderCreatedEvent.getOrder().getPrice().getAmount())
+                .createdAt(orderCreatedEvent.getCreatedAt())
+                .paymentOrderStatus(PaymentOrderStatus.PENDING.name())
                 .build();
     }
 }
