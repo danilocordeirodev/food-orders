@@ -1,7 +1,12 @@
 package com.oriedroc.systems.order.service.domain.outbox.scheduler.approval;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oriedroc.systems.domain.valueobject.OrderStatus;
 import com.oriedroc.systems.order.service.domain.exception.OrderDomainException;
+import com.oriedroc.systems.order.service.domain.outbox.model.approval.OrderApprovalEventPayload;
 import com.oriedroc.systems.order.service.domain.outbox.model.approval.OrderApprovalOutboxMessage;
+import com.oriedroc.systems.order.service.domain.outbox.model.payment.OrderPaymentEventPayload;
 import com.oriedroc.systems.order.service.domain.outbox.model.payment.OrderPaymentOutboxMessage;
 import com.oriedroc.systems.order.service.domain.ports.output.repository.ApprovalOutboxRepository;
 import com.oriedroc.systems.outbox.OutboxStatus;
@@ -20,9 +25,11 @@ import static com.oriedroc.systems.saga.order.SagaConstants.ORDER_SAGA_NAME;
 @Component
 public class ApprovalOutboxHelper {
     private ApprovalOutboxRepository approvalOutboxRepository;
+    private final ObjectMapper objectMapper;
 
-    public ApprovalOutboxHelper(ApprovalOutboxRepository approvalOutboxRepository) {
+    public ApprovalOutboxHelper(ApprovalOutboxRepository approvalOutboxRepository, ObjectMapper objectMapper) {
         this.approvalOutboxRepository = approvalOutboxRepository;
+        this.objectMapper = objectMapper;
     }
 
     @Transactional(readOnly = true)
@@ -56,5 +63,35 @@ public class ApprovalOutboxHelper {
     public void deleteApprovalOutboxMessageByOutboxStatusAndSagaStatus(OutboxStatus outboxStatus,
                                                                       SagaStatus... sagaStatus) {
         approvalOutboxRepository.deleteByTypeAndOutboxStatusAndSagaStatus(ORDER_SAGA_NAME, outboxStatus, sagaStatus);
+    }
+
+    @Transactional
+    public void saveApprovalOutboxMessage(OrderApprovalEventPayload orderApprovalEventPayload,
+                                          OrderStatus orderStatus,
+                                          SagaStatus sagaStatus,
+                                          OutboxStatus outboxStatus,
+                                          UUID sagaId) {
+        save(OrderApprovalOutboxMessage.builder()
+                .id(UUID.randomUUID())
+                .sagaId(sagaId)
+                .createdAt(orderApprovalEventPayload.getCreatedAt())
+                .type(ORDER_SAGA_NAME)
+                .payload(createPayload(orderApprovalEventPayload))
+                .orderStatus(orderStatus)
+                .sagaStatus(sagaStatus)
+                .outboxStatus(outboxStatus)
+                .build()
+        );
+    }
+
+    private String createPayload(OrderApprovalEventPayload orderApprovalEventPayload) {
+        try {
+            return objectMapper.writeValueAsString(orderApprovalEventPayload);
+        } catch (JsonProcessingException e) {
+            log.error("Could not create OrderApprovalEventPayload object for order id: {}",
+                    orderApprovalEventPayload.getOrderId(), e);
+            throw new OrderDomainException("Could not create OrderApprovalEventPayload object for order id: " +
+                    orderApprovalEventPayload.getOrderId(), e);
+        }
     }
 }
