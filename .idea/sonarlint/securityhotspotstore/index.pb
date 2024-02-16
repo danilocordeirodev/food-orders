@@ -74,12 +74,6 @@ bcommon/common-domain/src/main/java/com/oriedroc/systems/domain/valueobject/Paym
 ßpayment-service/payment-domain/payment-application-service/src/main/java/com/oriedroc/systems/payment/service/domain/ports/output/repository/CreditEntryRepository.java,b/9/b96c188076d5b5acd433a288fa3cd59a9b1a169f
 ⁄
 ©payment-service/payment-domain/payment-application-service/src/main/java/com/oriedroc/systems/payment/service/domain/ports/output/repository/CreditHistoryRepository.java,c/8/c8529b993f5e064618cc163656cef0e71fe68ea1
-Í
-πpayment-service/payment-domain/payment-application-service/src/main/java/com/oriedroc/systems/payment/service/domain/ports/output/message/publisher/PaymentCancelledMessagePublisher.java,4/9/49e533171f9103f5b912102ebf2fc6257365c979
-Á
-∂payment-service/payment-domain/payment-application-service/src/main/java/com/oriedroc/systems/payment/service/domain/ports/output/message/publisher/PaymentFailedMessagePublisher.java,9/9/99b91930649ae094642b46b2ae4b2f8d384468e9
-Í
-πpayment-service/payment-domain/payment-application-service/src/main/java/com/oriedroc/systems/payment/service/domain/ports/output/message/publisher/PaymentCompletedMessagePublisher.java,f/7/f730610428c8aacf75185c07a9f1d7df50e73417
 ø
 épayment-service/payment-domain/payment-application-service/src/main/java/com/oriedroc/systems/payment/service/domain/PaymentRequestHelper.java,d/3/d383a15a99f2406c666145ddbbd2bf08eeb129e2
 Ã
@@ -128,16 +122,8 @@ W
 ìpayment-service/payment-data-access/src/main/java/com/oriedroc/systems/payment/service/dataaccess/payment/exception/PaymentDataaccessException.java,4/9/4908a154fb726bbf29930e603ae8d819b40aa569
 ∂
 Öpayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/mapper/PaymentMessagingDataMapper.java,e/0/e0e88d2606ed93d632a2f45899ac92e1335bd82c
- 
-ôpayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/publisher/kafka/PaymentCompletedKafkaMessagePublisher.java,0/6/06facf42a4e44d0280414dcfcd5de03863c97b60
 ù
 minfrastructure/kafka/kafka-producer/src/main/java/com/oriedroc/systems/kafka/producer/KafkaMessageHelper.java,8/7/87952e582ea1afdc77a96dc393c1eaeffce7fa23
-ø
-éorder-service/order-messaging/src/main/java/com/oriedroc/systems/order/service/messaging/publisher/kafka/CancelOrderKafkaMessagePublisher.java,8/6/865e91792e47c9df772f859784415be0a61ff118
- 
-ôpayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/publisher/kafka/PaymentCancelledKafkaMessagePublisher.java,e/0/e036e2527d03244be239c191bd9fd39d5cb69a3c
-«
-ñpayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/publisher/kafka/PaymentFailedKafkaMessagePublisher.java,1/f/1fdade76e9242b47e2c6b59f7a7c79bf4900684f
 ø
 épayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/listener/kafka/PaymentRequestKafkaListener.java,7/6/76c0f543468d0c7d41e99ed13ddf4ed796e4a3c5
 U
@@ -246,8 +232,6 @@ K
 infrastructure/saga/pom.xml,c/6/c6061f55a01918b293376f67a6a8c0e2d36c64d7
 y
 Iinfrastructure/saga/src/main/java/com/oriedroc/systems/saga/SagaStep.java,9/3/93b247648a51505c0ec6604ba8cdc70f8684bcd1
-Ñ
-Tcommon/common-domain/src/main/java/com/oriedroc/systems/domain/event/EmptyEvent.java,b/6/b67ce1f1c207b0d0f9df0165fe7ce1c1bbc39561
 ≥
 Çorder-service/order-domain/order-application-service/src/main/java/com/oriedroc/systems/order/service/domain/OrderPaymentSaga.java,0/8/0857ec46533466a84e48594cebd8f45ecb038f72
  
@@ -382,3 +366,5 @@ oorder-service/order-container/src/test/java/com/oriedroc/systems/order/service/
 ëpayment-service/payment-data-access/src/main/java/com/oriedroc/systems/payment/service/dataaccess/outbox/repository/OrderOutboxJpaRepository.java,2/2/2285fc5f515acd8ca29acaebd56d3d25750ba115
 ø
 épayment-service/payment-messaging/src/main/java/com/oriedroc/systems/payment/service/messaging/publisher/kafka/PaymentEventKafkaPublisher.java,3/c/3c390e9fc2e75cc13a0b91f172bd755127c43b3b
+≥
+Çpayment-service/payment-container/src/test/java/com/oriedroc/systems/payment/service/domain/PaymentRequestMessageListenerTest.java,e/b/ebcb3a2556670f71cfbcbef5405f4ea96bbb0517
