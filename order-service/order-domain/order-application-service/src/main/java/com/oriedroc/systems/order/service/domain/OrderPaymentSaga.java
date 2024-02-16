@@ -1,6 +1,5 @@
 package com.oriedroc.systems.order.service.domain;
 
-import com.oriedroc.systems.domain.event.EmptyEvent;
 import com.oriedroc.systems.domain.valueobject.OrderStatus;
 import com.oriedroc.systems.domain.valueobject.PaymentStatus;
 import com.oriedroc.systems.order.service.domain.dto.message.PaymentResponse;
