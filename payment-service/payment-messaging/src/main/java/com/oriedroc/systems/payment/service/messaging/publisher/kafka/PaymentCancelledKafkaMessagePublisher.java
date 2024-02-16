@@ -1,20 +1,18 @@
 package com.oriedroc.systems.payment.service.messaging.publisher.kafka;
 
+import com.oriedroc.systems.domain.event.publisher.DomainEventPublisher;
 import com.oriedroc.systems.kafka.order.avro.model.PaymentResponseAvroModel;
 import com.oriedroc.systems.kafka.producer.KafkaMessageHelper;
 import com.oriedroc.systems.kafka.producer.service.KafkaProducer;
 import com.oriedroc.systems.payment.service.domain.config.PaymentServiceConfigData;
 import com.oriedroc.systems.payment.service.domain.event.PaymentCancelledEvent;
-import com.oriedroc.systems.payment.service.domain.event.PaymentCompletedEvent;
-import com.oriedroc.systems.payment.service.domain.ports.output.message.publisher.PaymentCancelledMessagePublisher;
-import com.oriedroc.systems.payment.service.domain.ports.output.message.publisher.PaymentCompletedMessagePublisher;
 import com.oriedroc.systems.payment.service.messaging.mapper.PaymentMessagingDataMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class PaymentCancelledKafkaMessagePublisher implements PaymentCancelledMessagePublisher {
+public class PaymentCancelledKafkaMessagePublisher implements DomainEventPublisher<PaymentCancelledEvent> {
 
     private final PaymentMessagingDataMapper paymentMessagingDataMapper;
     private final KafkaProducer<String, PaymentResponseAvroModel> kafkaProducer;
