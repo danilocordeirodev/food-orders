@@ -42,6 +42,11 @@
             </dependency>
             <dependency>
                 <groupId>com.oriedroc.systems</groupId>
+                <artifactId>outbox</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oriedroc.systems</groupId>
                 <artifactId>order-domain-core</artifactId>
                 <version>${project.version}</version>
             </dependency>

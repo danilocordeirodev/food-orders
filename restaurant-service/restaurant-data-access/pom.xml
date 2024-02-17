@@ -14,6 +14,10 @@
     <dependencies>
         <dependency>
             <groupId>com.oriedroc.systems</groupId>
+            <artifactId>outbox</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
             <artifactId>restaurant-application-service</artifactId>
         </dependency>
         <dependency>
