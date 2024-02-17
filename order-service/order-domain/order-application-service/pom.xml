@@ -17,6 +17,10 @@
     <dependencies>
         <dependency>
             <groupId>com.oriedroc.systems</groupId>
+            <artifactId>saga</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
             <artifactId>order-domain-core</artifactId>
         </dependency>
         <dependency>

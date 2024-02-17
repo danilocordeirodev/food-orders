@@ -1,5 +1,6 @@
 package com.oriedroc.systems.order.service.dataaccess.order.adapter;
 
+import com.oriedroc.systems.domain.valueobject.OrderId;
 import com.oriedroc.systems.order.service.dataaccess.order.mapper.OrderDataAccessMapper;
 import com.oriedroc.systems.order.service.dataaccess.order.repository.OrderJpaRepository;
 import com.oriedroc.systems.order.service.domain.entity.Order;
@@ -24,6 +25,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     public Order save(Order order) {
         return orderDataAccessMapper.orderEntityToOrder(orderJpaRepository
                 .save(orderDataAccessMapper.orderToOrderEntity(order)));
+    }
+
+    @Override
+    public Optional<Order> findById(OrderId orderId) {
+        return orderJpaRepository.findById(orderId.getValue()).map(orderDataAccessMapper::orderEntityToOrder);
     }
 
     @Override
