@@ -5,18 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.oriedroc.systems</groupId>
-        <artifactId>food-orders</artifactId>
+        <artifactId>customer-service</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>customer-service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>customer-container</module>
-        <module>customer-application</module>
-        <module>customer-data-access</module>
-        <module>customer-messaging</module>
-        <module>customer-domain</module>
-    </modules>
+    <artifactId>customer-messaging</artifactId>
 
 </project>

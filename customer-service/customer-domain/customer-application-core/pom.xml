@@ -5,18 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.oriedroc.systems</groupId>
-        <artifactId>food-orders</artifactId>
+        <artifactId>customer-domain</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>customer-service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>customer-container</module>
-        <module>customer-application</module>
-        <module>customer-data-access</module>
-        <module>customer-messaging</module>
-        <module>customer-domain</module>
-    </modules>
+    <artifactId>customer-application-core</artifactId>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>
