@@ -24,6 +24,26 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
+            <artifactId>customer-domain-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
+            <artifactId>customer-application-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
+            <artifactId>customer-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
+            <artifactId>customer-data-access</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oriedroc.systems</groupId>
+            <artifactId>customer-messaging</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

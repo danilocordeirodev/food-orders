@@ -418,3 +418,5 @@ m
 =customer-service/customer-domain/customer-domain-core/pom.xml,8/5/8501a9c00757f7002da22459e97ed59ef9acaaed
 ’
 bcustomer-service/customer-domain/customer-domain-core/src/main/java/com/oriedroc/systems/Main.java,9/a/9a11c451f9e718db5a93eb7253d13aac5c7836cf
+u
+Ecustomer-service/customer-domain/customer-application-service/pom.xml,8/7/87a36b84d224b7874b45240eecefa88b4f523eff
