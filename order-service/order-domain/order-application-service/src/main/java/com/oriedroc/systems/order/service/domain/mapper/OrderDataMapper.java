@@ -4,11 +4,9 @@ import com.oriedroc.systems.domain.valueobject.*;
 import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderCommand;
 import com.oriedroc.systems.order.service.domain.dto.create.CreateOrderResponse;
 import com.oriedroc.systems.order.service.domain.dto.create.OrderAddress;
+import com.oriedroc.systems.order.service.domain.dto.message.CustomerModel;
 import com.oriedroc.systems.order.service.domain.dto.track.TrackOrderResponse;
-import com.oriedroc.systems.order.service.domain.entity.Order;
-import com.oriedroc.systems.order.service.domain.entity.OrderItem;
-import com.oriedroc.systems.order.service.domain.entity.Product;
-import com.oriedroc.systems.order.service.domain.entity.Restaurant;
+import com.oriedroc.systems.order.service.domain.entity.*;
 import com.oriedroc.systems.order.service.domain.event.OrderCancelledEvent;
 import com.oriedroc.systems.order.service.domain.event.OrderCreatedEvent;
 import com.oriedroc.systems.order.service.domain.event.OrderPaidEvent;
@@ -114,5 +112,12 @@ public class OrderDataMapper {
                 .createdAt(orderCancelledEvent.getCreatedAt())
                 .paymentOrderStatus(PaymentOrderStatus.CANCELLED.name())
                 .build();
+    }
+
+    public Customer customerModelToCustomer(CustomerModel customerModel) {
+        return new Customer(new CustomerId(UUID.fromString(customerModel.getId())),
+                customerModel.getUsername(),
+                customerModel.getFirstName(),
+                customerModel.getLastName());
     }
 }

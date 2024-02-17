@@ -4,6 +4,7 @@ package com.oriedroc.systems.order.service.messaging.mapper;
 import com.oriedroc.systems.domain.valueobject.OrderApprovalStatus;
 import com.oriedroc.systems.domain.valueobject.PaymentStatus;
 import com.oriedroc.systems.kafka.order.avro.model.*;
+import com.oriedroc.systems.order.service.domain.dto.message.CustomerModel;
 import com.oriedroc.systems.order.service.domain.dto.message.PaymentResponse;
 import com.oriedroc.systems.order.service.domain.dto.message.RestaurantApprovalResponse;
 import com.oriedroc.systems.order.service.domain.entity.Order;
@@ -80,6 +81,15 @@ public class OrderMessagingDataMapper {
                                 .build()).collect(Collectors.toList()))
                 .setPrice(orderApprovalEventPayload.getPrice())
                 .setCreatedAt(orderApprovalEventPayload.getCreatedAt().toInstant())
+                .build();
+    }
+
+    public CustomerModel customerAvroModelToCustomerModel(CustomerAvroModel customerAvroModel) {
+        return CustomerModel.builder()
+                .id(customerAvroModel.getId())
+                .username(customerAvroModel.getUsername())
+                .firstName(customerAvroModel.getFirstName())
+                .lastName(customerAvroModel.getLastName())
                 .build();
     }
 
